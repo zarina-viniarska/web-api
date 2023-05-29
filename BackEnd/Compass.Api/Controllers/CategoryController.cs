@@ -21,6 +21,7 @@ namespace Compass.Api.Controllers
         }
 
         [HttpGet("get-all")]
+        [AllowAnonymous]
         public async Task<IActionResult> Index()
         {
             var result = await _categoryService.GetAll();

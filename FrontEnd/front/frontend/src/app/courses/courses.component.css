@@ -1,7 +1,8 @@
-.example-card {
+.card {
+    filter: drop-shadow(0 0 0.75rem #9491b3);
     width: 250px;
     flex-wrap: wrap;
-    margin: 20px;
+    margin: 27px;
   }
   
   .example-header-image {
@@ -16,16 +17,11 @@
     background-color: #cfccf4;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;
     flex-direction: row;
     flex-wrap: wrap;
     padding-top: 20px;
     margin: 0 20px;
-}
-
-mat-card{
-    filter: drop-shadow(0 0 0.75rem #9491b3);
-    /* height: 430px; */
 }
 
 .card-text {

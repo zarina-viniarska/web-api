@@ -64,6 +64,17 @@ namespace Compass.Core.Services
             };
         }
 
+        public async Task<ServiceResponse> GetByCategoryId(int id)
+        {
+            var courses = await _courseRepo.GetListBySpec(new Courses.GetByCategoryId(id));
+            return new ServiceResponse
+            {
+                Success = true,
+                Message = "Courses by category id are loaded successfully",
+                Payload = _mapper.Map<List<CourseDto>>(courses),
+            };
+        }
+
         public async Task<ServiceResponse> Update(CourseDto model)
         {
             var course = await _courseRepo.GetItemBySpec(new Courses.GetByName(model.Title));

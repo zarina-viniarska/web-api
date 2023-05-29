@@ -28,6 +28,14 @@ namespace Compass.Api.Controllers
             return Ok(result);
         }
 
+        [HttpGet("get-by-category-id")]
+        [AllowAnonymous]
+        public async Task<IActionResult> GetByCategoryId(int id)
+        {
+            var result = await _courseService.GetByCategoryId(id);
+            return Ok(result);
+        }
+
         [HttpPost("create")]
         public async Task<IActionResult> Create([FromBody] CourseDto model)
         {
