@@ -1,0 +1,30 @@
+<mat-sidenav-container class="example-container">
+  <mat-sidenav mode="side" opened>
+    <mat-nav-list *ngFor="let category of categories">
+      <a mat-list-item routerLink=".">{{ category.name }}</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <h1 class="main-header">All courses</h1>
+    <div class="flex-box">
+      <mat-card class="example-card" *ngFor="let course of courses">
+        <mat-card-header>
+          <mat-card-title>{{ course.title }}</mat-card-title>
+          <mat-card-subtitle>{{ course.categoryName }}</mat-card-subtitle>
+        </mat-card-header>
+        <img class="card-img" mat-card-image src="{{ course.imagePath }}" alt="Photo of a Shiba Inu">
+        <mat-card-content>
+          <p class="card-text description">
+            {{ course.description }}
+          </p>
+          <p class="card-text">
+              Price: {{ course.price }} ₴
+          </p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button class="card-btn" mat-button>BUY</button>
+        </mat-card-actions>
+      </mat-card>
+  </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
